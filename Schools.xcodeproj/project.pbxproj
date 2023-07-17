@@ -26,6 +26,8 @@
 		B12CE9962A654DC8006C54F5 /* SchoolDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12CE9952A654DC8006C54F5 /* SchoolDetailViewModel.swift */; };
 		B12CE9982A656EA9006C54F5 /* SchoolSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12CE9972A656EA9006C54F5 /* SchoolSection.swift */; };
 		B12CE99A2A656ECF006C54F5 /* SchoolMapAnnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12CE9992A656ECF006C54F5 /* SchoolMapAnnnotation.swift */; };
+		B12CE9A02A658AD3006C54F5 /* SchoolCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12CE99F2A658AD3006C54F5 /* SchoolCardView.swift */; };
+		B12CE9A22A6594E7006C54F5 /* SchoolAppBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12CE9A12A6594E7006C54F5 /* SchoolAppBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,9 @@
 		B12CE9952A654DC8006C54F5 /* SchoolDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDetailViewModel.swift; sourceTree = "<group>"; };
 		B12CE9972A656EA9006C54F5 /* SchoolSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolSection.swift; sourceTree = "<group>"; };
 		B12CE9992A656ECF006C54F5 /* SchoolMapAnnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolMapAnnnotation.swift; sourceTree = "<group>"; };
+		B12CE99B2A6586AC006C54F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B12CE99F2A658AD3006C54F5 /* SchoolCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolCardView.swift; sourceTree = "<group>"; };
+		B12CE9A12A6594E7006C54F5 /* SchoolAppBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolAppBar.swift; sourceTree = "<group>"; };
 		C5D76EB15DFE44C242944EB0 /* Pods-Schools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Schools.debug.xcconfig"; path = "Target Support Files/Pods-Schools/Pods-Schools.debug.xcconfig"; sourceTree = "<group>"; };
 		E277B02E9048249C06B003AB /* Pods_Schools_SchoolsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Schools_SchoolsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -152,10 +157,12 @@
 		B12CE9592A65421A006C54F5 /* Schools */ = {
 			isa = PBXGroup;
 			children = (
+				B12CE99B2A6586AC006C54F5 /* Info.plist */,
 				B12CE95A2A65421A006C54F5 /* SchoolsApp.swift */,
 				B12CE9872A654355006C54F5 /* Networking */,
 				B12CE9862A654343006C54F5 /* View Models */,
 				B12CE9882A654376006C54F5 /* Models */,
+				B12CE99C2A658797006C54F5 /* Views */,
 				B12CE9842A6542C0006C54F5 /* UILayer */,
 				B12CE95E2A65421F006C54F5 /* Assets.xcassets */,
 				B12CE9602A65421F006C54F5 /* Preview Content */,
@@ -224,6 +231,15 @@
 				B12CE9992A656ECF006C54F5 /* SchoolMapAnnnotation.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B12CE99C2A658797006C54F5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B12CE99F2A658AD3006C54F5 /* SchoolCardView.swift */,
+				B12CE9A12A6594E7006C54F5 /* SchoolAppBar.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,11 +485,13 @@
 				B12CE95D2A65421A006C54F5 /* ContentView.swift in Sources */,
 				B12CE98E2A6543D3006C54F5 /* SchoolLoadingState.swift in Sources */,
 				B12CE99A2A656ECF006C54F5 /* SchoolMapAnnnotation.swift in Sources */,
+				B12CE9A02A658AD3006C54F5 /* SchoolCardView.swift in Sources */,
 				B12CE98A2A6543BA006C54F5 /* School.swift in Sources */,
 				B12CE98C2A6543C4006C54F5 /* SchoolSAT.swift in Sources */,
 				B12CE9922A6549BD006C54F5 /* DataError.swift in Sources */,
 				B12CE9902A654969006C54F5 /* SchoolDirectoryAPI.swift in Sources */,
 				B12CE95B2A65421A006C54F5 /* SchoolsApp.swift in Sources */,
+				B12CE9A22A6594E7006C54F5 /* SchoolAppBar.swift in Sources */,
 				B12CE9982A656EA9006C54F5 /* SchoolSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -636,7 +654,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Schools/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = Schools/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -665,7 +683,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Schools/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = Schools/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

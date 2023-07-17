@@ -13,6 +13,7 @@ class SchoolViewModel: ObservableObject {
     
     private var networkConnectivity = NWPathMonitor()
     @Published private(set) var schools: [School]?
+    @Published var schoolDataLoading = true
     @Published var schoolSATs: [SchoolSAT]?
     @Published private(set) var error: DataError? = nil
     
@@ -32,15 +33,19 @@ class SchoolViewModel: ObservableObject {
         case .satisfied:
             apiService.getSchools { [weak self] result in
                 switch result {
-                case .success(let schools): self?.schools = schools ?? []
+                case .success(let schools):
+                    self?.schools = schools ?? []
+                    self?.schoolDataLoading = false
                     if schools?.isEmpty == false {
                         self?.prepareSchoolSections()
+                        self?.schoolDataLoading = false
                     }
                 case .failure(let error):
                     self?.error = error
                 }
             }
         default:
+            self.schoolDataLoading = false
             print("No Internet Connection")
         }
     }
